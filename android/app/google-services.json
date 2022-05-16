@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "479125946805",
+    "project_id": "cureocity-f6e26",
+    "storage_bucket": "cureocity-f6e26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479125946805:android:abbc3579af5236209bd9fc",
+        "android_client_info": {
+          "package_name": "com.quadacts.cureocityuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479125946805-7g4jnpbo8v4ufh1qur736cms32c4hnfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNM02b0YuzBiVAnRAwhoPUH9rrAikK7l0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479125946805-7g4jnpbo8v4ufh1qur736cms32c4hnfl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
