@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Cureocity</string>
+  <string name="facebook_app_id">551451026471419</string>
+  <string name="fb_login_protocol_scheme">fb551451026471419</string>
+  <string name="facebook_client_token">29ac6f192fd30f80645f046cb1313b1e</string>
+</resources>

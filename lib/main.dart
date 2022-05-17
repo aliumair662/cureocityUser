@@ -1,3 +1,4 @@
+import 'package:cureocityuser/screens/ButtonBar_screen.dart';
 import 'package:cureocityuser/screens/login_screen.dart';
 import 'package:cureocityuser/screens/Home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, userSnapshot) {
           if (userSnapshot.hasData) {
-            return HomeScreen();
+            return BottomBarScreen();
           }
           return LoginScreen();
         },
