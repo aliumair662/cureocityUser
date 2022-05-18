@@ -2,7 +2,7 @@
     package="com.example.cureocityuser">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="cureocityuser"
+        android:label="Curoecity"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         

@@ -157,23 +157,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Colors.white,
                             child: Row(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 8.0),
+                                const Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 8.0),
                                   child: Icon(
                                     Icons.mobile_friendly,
                                     color: primaryColor,
                                   ),
                                 ),
-                                Expanded(
-                                  child: CountryPickerDropdown(
-                                    initialValue: 'pk',
-                                    itemBuilder: _buildDropdownItem,
-                                    onValuePicked: (Country country) {
-                                      // print("${country.phoneCode}");
-                                      coutryCode = country.phoneCode;
-                                    },
-                                  ),
+                                CountryPickerDropdown(
+                                  initialValue: 'pk',
+                                  itemBuilder: _buildDropdownItem,
+                                  onValuePicked: (Country country) {
+                                    // print("${country.phoneCode}");
+                                    coutryCode = country.phoneCode;
+                                  },
                                 ),
                                 Expanded(
                                   child: TextField(

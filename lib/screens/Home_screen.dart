@@ -1,5 +1,7 @@
 import 'package:cureocityuser/comstants/colors.dart';
 import 'package:cureocityuser/screens/login_screen.dart';
+import 'package:cureocityuser/screens/screens.dart';
+import 'package:cureocityuser/screens/store_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,12 +36,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(
-              Icons.shopping_cart,
-              color: Colors.black,
-            ),
-          )
+              padding: const EdgeInsets.only(right: 12.0),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => CartScreen()));
+                },
+                icon: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.black,
+                ),
+              ))
         ],
       ),
       backgroundColor: Colors.white,
@@ -116,19 +123,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Container(
-                            color: Colors.amber,
-                            width: _weight * 33 / 100,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'OTC Medicines',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w400),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  MedicineCotegoryListScreen()));
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Container(
+                              width: _weight * 33 / 100,
+                              decoration: BoxDecoration(
+                                color: Colors.lightGreen[100],
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/medicine.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'OTC',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      backgroundColor: Colors.lightGreen[100]),
+                                ),
                               ),
                             ),
                           ),
@@ -169,19 +192,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(25),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Container(
-                            color: Colors.cyanAccent,
-                            width: _weight * 60 / 100,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Stay Home Get Discount',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w400),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => DiscountScreen()));
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(25),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Container(
+                              color: Colors.cyanAccent,
+                              width: _weight * 60 / 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Stay Home Get Discount',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w400),
+                                ),
                               ),
                             ),
                           ),
@@ -222,23 +253,60 @@ class _HomeScreenState extends State<HomeScreen> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Container(
-                            width: _weight * 50 / 100,
-                            color: Colors.grey[200],
-                            child: ListTile(
-                              leading: Icon(Icons.image),
-                              title: Text(
-                                'Well Life Store',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600, fontSize: 16),
-                              ),
-                              subtitle: Text('Willington Bridge'),
-                            ),
-                          ),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => StoreScreen()));
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        color: Colors.lightGreen,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image.asset(
+                                            'assets/images/medicine.png',
+                                            fit: BoxFit.fitWidth,
+                                            width: _weight * 12 / 100,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Well Life Store',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            'Willinton Bridge',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.grey),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )),
                         ),
                       );
                     },

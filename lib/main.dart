@@ -1,9 +1,11 @@
+import 'package:cureocityuser/comstants/constants.dart';
 import 'package:cureocityuser/screens/ButtonBar_screen.dart';
 import 'package:cureocityuser/screens/login_screen.dart';
 import 'package:cureocityuser/screens/Home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +23,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+          centerTitle: true,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: appBarColor,
+            statusBarIconBrightness: Brightness.light,
+          ),
+        ),
       ),
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
